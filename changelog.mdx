@@ -13,6 +13,11 @@ title: Changelog
   - Fixed Vercel build failing on `/auth/tauri` by wrapping `useSearchParams()` behind a Suspense boundary (Next.js 16 requirement)
 </Update>
 
+<Update label="December 2025" description="v0.2.13" tags={["Bug Fix", "Improvement"]}>
+  - Fixed Tauri auth onboarding: “Sign in with browser” now reliably opens the system browser (adds a native OS-level fallback when shell plugin open fails)
+  - Moved the desktop app version label to the left of the focus indicator in the top bar
+</Update>
+
 <Update label="December 2024" description="v0.2.8" tags={["Bug Fix"]}>
   - Fixed app/website blocking continuing after focus session ends
   - Improved notification icon handling on macOS
