@@ -2,9 +2,13 @@
 title: Changelog
 ---
 
-<Update label="December 2025" description="v0.2.10" tags={["Improvement"]}>
+<Update label="December 2025" description="v0.2.10" tags={["Improvement", "Bug Fix"]}>
   - Improved Tauri startup experience: show a native splash immediately and avoid the long blank/white window while the UI loads
   - Fixed blocked-site focus overlay window corners by making the native overlay transparent (prevents background bleed behind the rounded UI)
+  - Fixed notification permission check to use native macOS API instead of unreliable Web Notification API
+  - Standardized blocked-app notifications to use Tauri’s official notification plugin; in `tauri dev` macOS may group them under Terminal
+  - Prevented confusing “Add” no-ops in Focus Blocker by disabling add when a website/app is already on the blocklist
+  - Aligned day headers with task cards and section dividers for cleaner visual rhythm
 </Update>
 
 <Update label="December 2024" description="v0.2.8" tags={["Bug Fix"]}>
