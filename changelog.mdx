@@ -2,9 +2,28 @@
 title: Changelog
 ---
 
-<Update label="December 2024" description="v0.2.0" tags={["New Feature"]}>
+<Update label="December 2025" description="v0.2.10" tags={["Improvement"]}>
+  - Improved Tauri startup experience: show a native splash immediately and avoid the long blank/white window while the UI loads
+  - Fixed blocked-site focus overlay window corners by making the native overlay transparent (prevents background bleed behind the rounded UI)
+</Update>
+
+<Update label="December 2024" description="v0.2.8" tags={["Bug Fix"]}>
+  - Fixed app/website blocking continuing after focus session ends
+  - Improved notification icon handling on macOS
+  - Added cleanup to ensure blocking stops when session ends from any source
+  - Request notification permission on launch (Tauri) and show real notification permission status in the permissions modal
+</Update>
+
+<Update label="December 2024" description="v0.2.0" tags={["New Feature", "Improved"]}>
   - Native macOS website blocking via Accessibility API
   - Shows blocking modal when visiting distracting sites during focus sessions
-  - Modal reappears after 30 seconds if closed while still on blocked site
+  - Modal reappears after 15 seconds if closed while still on blocked site
   - No admin password required - uses browser URL monitoring
+  - Redesigned blocking modal with minimalistic Apple-style design
+  - Reduced modal size from 1000x680 to 440x260 for cleaner appearance
+  - Added 12px rounded corners to modal window for modern macOS appearance
+  - Refined typography and spacing for better readability
+  - Focus Blocker settings redesigned with Websites/Apps segment control
+  - Added master toggle to enable/disable blocking (on by default for macOS)
+  - Web users see "Only on MacOS" messaging with disabled inputs
 </Update>
