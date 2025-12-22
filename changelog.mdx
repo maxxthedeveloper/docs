@@ -2,6 +2,12 @@
 title: Changelog
 ---
 
+<Update label="December 2025" description="v0.2.17" tags={["Bug Fix"]}>
+  - Fixed critical bug where focus time was lost when session was auto-paused by cleanup
+  - Previously, if your laptop slept briefly during a focus session, only the time before sleep was saved
+  - Now all focus time is correctly tracked and saved, even if the session is interrupted
+</Update>
+
 <Update label="December 2025" description="v0.2.16" tags={["Bug Fix"]}>
   - Fixed auto-update not working by adding missing `updater:default` permission to Tauri capabilities
   - Users on v0.2.14 or v0.2.15 will need to manually download this version, but future updates will work automatically
