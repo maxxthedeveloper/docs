@@ -9,6 +9,14 @@ title: Changelog
   - Improved online presence accuracy across multiple tabs by relying on heartbeat TTL rather than deleting presence on unmount
 </Update>
 
+<Update label="December 2025" description="v0.2.21" tags={["Bug Fix", "Improvement"]}>
+  - Fixed false "Update check failed" errors by bundling the UI into the desktop app
+  - Update check failures are now silent on automatic checks; errors only shown when you manually check
+  - Fixed false "older version" banner appearing on modern app versions
+  - Desktop app now loads instantly (no network dependency for initial render)
+  - Improved error message for users who need to manually update (links directly to download page)
+</Update>
+
 <Update label="December 2025" description="v0.2.19" tags={["New Feature", "Improvement"]}>
   - Added Long-Term Goals with time-based streaks (optional via Settings → Goals)
   - Goal ring indicator in the navbar shows daily progress and streak; hover reveals goal title
