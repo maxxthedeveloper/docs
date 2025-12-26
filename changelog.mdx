@@ -2,6 +2,13 @@
 title: Changelog
 ---
 
+<Update label="December 2025" description="Unreleased" tags={["Bug Fix", "Improvement"]}>
+  - Fixed “today” focus attribution across the Europe/Berlin midnight boundary (sessions that cross midnight no longer land on the wrong day)
+  - Community dropdown now only shows focusing + online users (no “offline focused today” rows)
+  - Clarified that “today” labels use the Europe/Berlin day boundary
+  - Improved online presence accuracy across multiple tabs by relying on heartbeat TTL rather than deleting presence on unmount
+</Update>
+
 <Update label="December 2025" description="v0.2.19" tags={["New Feature", "Improvement"]}>
   - Added Long-Term Goals with time-based streaks (optional via Settings → Goals)
   - Goal ring indicator in the navbar shows daily progress and streak; hover reveals goal title
