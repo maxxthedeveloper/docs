@@ -3,6 +3,11 @@ title: Changelog
 ---
 
 <Update label="January 2026" description="Unreleased" tags={["Bug Fix", "Improvement"]}>
+  - **Blocking permissions banner**: Desktop app now shows a top-nav banner when website blocking can't work due to missing permissions (Accessibility or Automation)
+  - Added **Automation permission check** for website blocking; previously only Accessibility was checked, but AppleScript browser control also requires Automation permission in macOS
+  - Permissions modal now shows Automation status alongside Accessibility and Notifications with a button to trigger browser permission prompts
+  - Expanded browser prewarm to include Dia, Comet, Sigma, Atlas, and ChatGPT so permission prompts appear during setup rather than mid-session
+  - Improved logging of AppleScript failures to help diagnose permission issues
   - **Blocked apps are now closed** instead of just hidden during focus sessions; if the app refuses to quit (e.g., unsaved changes dialog), it falls back to hiding; persistent re-opens escalate to force-terminate
   - Task cards now show **minutes left** in real time while focusing (e.g. 60 → 54 after 6 minutes)
   - Fixed "today" focus attribution across the Europe/Berlin midnight boundary (sessions that cross midnight no longer land on the wrong day)
@@ -13,6 +18,7 @@ title: Changelog
   - Leaderboard "todos completed" no longer counts subtasks (only top-level tasks)
   - 2026 leaderboards: year grid now matches the page width; restored "Top 10 contenders" under the grid; future-day tooltip now says "To be determined"
   - Fixed blocked-site redirect showing "No active focus session" after pausing/stopping/resuming a task; now reliably shows the task name
+  - Fixed Google Calendar sync showing events 1 hour ahead by using the client's timezone instead of UTC when creating/updating events
 </Update>
 
 <Update label="December 2025" description="v0.2.21" tags={["Bug Fix", "Improvement"]}>
