@@ -3,6 +3,8 @@ title: Changelog
 ---
 
 <Update label="January 2026" description="Unreleased" tags={["New Feature", "Bug Fix", "Improvement"]}>
+  - **Instant Mission toggle**: Switching between Week and Mission views now feels instant—goals and chat data are cached in memory, AI settings are shared across components (eliminating duplicate fetches), and the chat sidebar loads in the background while goals paint immediately
+  - **Snappier drag-and-drop**: Moving tasks between columns now feels instant—optimistic updates commit synchronously before the drag preview disappears, eliminating the perceptible delay on drop
   - **Multi-provider AI Assistant**: Choose between Claude (Anthropic), ChatGPT (OpenAI), or Gemini (Google) to power the AI assistant. Configure API keys for each provider in Settings → AI Assistant and switch between them anytime.
   - **Dynamic model selection**: Model dropdown now automatically shows the latest available models for your selected provider, derived from the installed AI SDK packages. No more outdated model lists.
   - **Goals/Mission page**: New hierarchical goals view with four time horizons (This year, This month, This week, Today) to help you plan from high-level objectives down to daily tasks
@@ -13,8 +15,12 @@ title: Changelog
   - **AI Settings**: Configure your Anthropic API key and customize the AI's system prompt in Settings → AI Assistant
   - **AI Model Selector**: Choose which Claude model powers the AI assistant (Sonnet 4, Opus 4, 3.7 Sonnet, or 3.5 Haiku) from Settings → AI Assistant
   - **Chat memory**: AI conversations are persisted across sessions with full thread history
-  - Fixed AI chat replies briefly appearing then disappearing in new chats (server now authenticates Convex writes using Clerk’s `convex` JWT template)
-  - **AI direct writes**: AI assistant now has immediate read/write access to tasks, goals, and focus data via bounded tools; no confirmation required for actions
+  - Fixed AI chat replies briefly appearing then disappearing in new chats (server now authenticates Convex writes using Clerk's `convex` JWT template)
+  - **AI Tool-enabled Assistant**: The AI can now read your goals, tasks, calendar events, and focus sessions via tools. Ask questions like "What are my goals?" or "Show me today's tasks" and the AI will fetch live data from your account.
+  - **AI Action Proposals with Confirmation**: The AI can propose changes to your goals, tasks, calendar events, and focus sessions. Each proposal appears as a card with Confirm/Cancel buttons—nothing is modified until you explicitly confirm.
+  - **AI Google Calendar Sync**: The AI can propose syncing or unsyncing tasks and calendar events with Google Calendar. On confirmation, events are created/updated/deleted in your connected Google account.
+  - **AI Focus Session Control**: The AI can propose starting, pausing, resuming, or ending focus sessions on your behalf (with confirmation).
+  - **Expanded AI Actions**: New action types for updating tasks (title, estimate, priority), scheduling/unscheduling time blocks, moving tasks between dates, and managing internal calendar events.
   - **Clerk↔Convex auth integration**: Database functions now derive user identity from Clerk JWT tokens for improved security; user IDs are never passed from client
   - **Bounded AI context**: Thread summaries auto-compress conversation history; user memory stores stable facts/preferences; both capped to prevent token inflation
   - **AI agent auditing foundation**: All AI tool calls use internal Convex functions with ownership verification
