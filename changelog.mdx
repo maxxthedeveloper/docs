@@ -3,6 +3,9 @@ title: Changelog
 ---
 
 <Update label="January 2026" description="Unreleased" tags={["New Feature", "Bug Fix", "Improvement"]}>
+  - **AI workflow guard**: Fixed AI assistant getting stuck repeating onboarding questions (e.g. "What could you finish THIS MONTH?"). The chat route now detects the current workflow step and injects anti-loop protection, forcing tool calls when appropriate and preventing re-asks of answered questions.
+  - **Attempt caps per phase**: If the AI stays in the same onboarding phase for 3+ turns without advancing, the system escalates—extracting the best available goal content from user messages and forcing a createGoal call. Prevents infinite loops even with vague user input.
+  - **Prompt editor (dev)**: The "Prompt" button in the AI chat panel now works—reads and writes the system prompt file in development mode. Prod displays a clear error since the filesystem is read-only.
   - **Instant Mission toggle**: Switching between Week and Mission views now feels instant—goals and chat data are cached in memory, AI settings are shared across components (eliminating duplicate fetches), and the chat sidebar loads in the background while goals paint immediately
   - **Snappier drag-and-drop**: Moving tasks between columns now feels instant—optimistic updates commit synchronously before the drag preview disappears, eliminating the perceptible delay on drop
   - **Multi-provider AI Assistant**: Choose between Claude (Anthropic), ChatGPT (OpenAI), or Gemini (Google) to power the AI assistant. Configure API keys for each provider in Settings → AI Assistant and switch between them anytime.
@@ -25,6 +28,8 @@ title: Changelog
   - **Bounded AI context**: Thread summaries auto-compress conversation history; user memory stores stable facts/preferences; both capped to prevent token inflation
   - **AI agent auditing foundation**: All AI tool calls use internal Convex functions with ownership verification
   - **Blocking permissions banner**: Desktop app now shows a top-nav banner when website blocking can't work due to missing permissions (Accessibility or Automation)
+  - Clarified that **app blocking is macOS-only** (for now) and prevented native blocking sync attempts on unsupported platforms (fixes confusing “it doesn’t work” states on Windows/web)
+  - **Windows website blocking (extension)**: Added `/extension-auth` + `/api/focus-status` so the Focuh Blocker browser extension can enforce website blocking on Windows (Chrome/Edge) without macOS Accessibility
   - Added **Automation permission check** for website blocking; previously only Accessibility was checked, but AppleScript browser control also requires Automation permission in macOS
   - Permissions modal now shows Automation status alongside Accessibility and Notifications with a button to trigger browser permission prompts
   - Expanded browser prewarm to include Dia, Comet, Sigma, Atlas, and ChatGPT so permission prompts appear during setup rather than mid-session
