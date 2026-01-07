@@ -30,6 +30,7 @@ title: Changelog
   - Expanded browser prewarm to include Dia, Comet, Sigma, Atlas, and ChatGPT so permission prompts appear during setup rather than mid-session
   - Improved logging of AppleScript failures to help diagnose permission issues
   - **Blocked apps are now closed** instead of just hidden during focus sessions; if the app refuses to quit (e.g., unsaved changes dialog), it falls back to hiding; persistent re-opens escalate to force-terminate
+  - **Windows download**: `/download` now surfaces Windows installers (x64) when available, and the primary download button auto-picks macOS vs Windows based on your device
   - Task cards now show **minutes left** in real time while focusing (e.g. 60 → 54 after 6 minutes)
   - Fixed "today" focus attribution across the Europe/Berlin midnight boundary (sessions that cross midnight no longer land on the wrong day)
   - Community dropdown now only shows focusing + online users (no "offline focused today" rows)
