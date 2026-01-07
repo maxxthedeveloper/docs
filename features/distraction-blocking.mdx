@@ -37,9 +37,11 @@ Blocking is only active during focus sessions. When you're not focusing, you can
 
 ## Desktop App Features
 
-The native desktop app provides system-wide blocking:
+The desktop app supports distraction blocking, but the implementation differs by OS:
 
-- **Works across all browsers** - Safari, Chrome, Firefox, and more
-- **Uses Accessibility API** - No admin password required, just one-time permission
-- **Syncs with web app** - Your block list is the same everywhere
+- **macOS (native)**: System-wide blocking across Safari, Chrome, Firefox, and more
+  - Uses **Accessibility + Automation** (AppleScript) — no admin password, just one-time permissions
+- **Windows (extension)**: Website blocking runs via the **Focuh Blocker browser extension** (Chrome/Edge)
+  - No “Accessibility” permission exists on Windows; the extension enforces redirects during focus sessions
+- **Syncs with web app**: Your block list is the same everywhere
 
