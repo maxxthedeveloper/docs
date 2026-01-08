@@ -3,6 +3,7 @@ title: Changelog
 ---
 
 <Update label="January 2026" description="Unreleased" tags={["New Feature", "Bug Fix", "Improvement"]}>
+  - **AI message persistence fix**: Fixed AI assistant replies disappearing after sending the next message. Assistant responses are now persisted to the database before the stream closes, ensuring they remain visible in the chat history.
   - **AI workflow guard**: Fixed AI assistant getting stuck repeating onboarding questions (e.g. "What could you finish THIS MONTH?"). The chat route now detects the current workflow step and injects anti-loop protection, forcing tool calls when appropriate and preventing re-asks of answered questions.
   - **Attempt caps per phase**: If the AI stays in the same onboarding phase for 3+ turns without advancing, the system escalates—extracting the best available goal content from user messages and forcing a createGoal call. Prevents infinite loops even with vague user input.
   - **Prompt editor (dev)**: The "Prompt" button in the AI chat panel now works—reads and writes the system prompt file in development mode. Prod displays a clear error since the filesystem is read-only.
