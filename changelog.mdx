@@ -2,6 +2,14 @@
 title: Changelog
 ---
 
+<Update label="July 2026" description="v0.3.0" tags={["Feature"]}>
+  - **A new Focuh.** Redesigned from the ground up: a calmer, faster interface with a sidebar that gets out of your way.
+  - **Today** — your day on one screen: tasks beside your calendar, with drag-to-schedule and two-way Google Calendar sync.
+  - **Week** — the board, redesigned.
+  - **Focusing** — a full-screen focus view with your subtasks and timer.
+  - Prefer the old look? Switch back anytime in Settings → General.
+</Update>
+
 <Update label="January 2026" description="Unreleased" tags={["New Feature", "Bug Fix", "Improvement"]}>
   - **AI message persistence fix**: Fixed AI assistant replies disappearing after sending the next message. Assistant responses are now persisted to the database before the stream closes, ensuring they remain visible in the chat history.
   - **AI workflow guard**: Fixed AI assistant getting stuck repeating onboarding questions (e.g. "What could you finish THIS MONTH?"). The chat route now detects the current workflow step and injects anti-loop protection, forcing tool calls when appropriate and preventing re-asks of answered questions.
