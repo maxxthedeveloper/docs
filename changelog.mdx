@@ -2,6 +2,13 @@
 title: Changelog
 ---
 
+<Update label="August 2026" description="v2.2.0" tags={["Improvement"]}>
+  - **One-paste MCP setup.** Preferences → MCP Server now has a **Copy setup prompt** button. Paste the prompt into any coding agent and it installs and verifies the Focuh MCP server for you — credentials already filled in.
+  - **Setup for five clients.** Claude Code gets a one-line `claude mcp add` command, Cursor gets a one-click install deeplink, and Claude Desktop keeps the config-file route.
+  - **Hosted remote connector.** Claude.ai and ChatGPT can now connect to Focuh at `https://www.focuh.com/api/mcp` as a custom connector with OAuth — no Node.js, no API key to paste.
+  - **Raycast and Poke support removed.** Both were unmaintained and their instructions no longer worked; the docs now cover the clients we actually test.
+</Update>
+
 <Update label="July 2026" description="v0.3.0" tags={["Feature"]}>
   - **A new Focuh.** Redesigned from the ground up: a calmer, faster interface with a sidebar that gets out of your way.
   - **Today** — your day on one screen: tasks beside your calendar, with drag-to-schedule and two-way Google Calendar sync.

@@ -1,77 +1,169 @@
 ---
 title: "MCP Server"
-description: "Use Focuh with AI assistants like Claude and Cursor"
+description: "Use Focuh with Claude, Cursor, ChatGPT, and other MCP clients"
 ---
 
-Focuh provides an MCP (Model Context Protocol) server that allows AI assistants to interact with your tasks.
+Focuh provides an MCP (Model Context Protocol) server that lets AI assistants read and change your tasks, subtasks, loops, calendar, goals, and focus stats.
 
-## What is MCP?
+## Fastest setup: copy the setup prompt
 
-MCP is a protocol that allows AI assistants to connect to external tools and services. With the Focuh MCP server, AI assistants can:
+<Steps>
+  <Step title="Open Preferences → MCP Server">
+    In Focuh, go to **Preferences** → **MCP Server** and generate an API key if you don't have one yet.
+  </Step>
+  <Step title="Click “Copy setup prompt”">
+    The prompt already contains your API key and Convex URL.
+  </Step>
+  <Step title="Paste it into your agent">
+    Paste it into Claude Code, Cursor, or any agent that can edit files. It works out which client it's running in, writes the config, and verifies the connection by calling `get_tasks`.
+  </Step>
+</Steps>
 
-- **View your tasks** - See what's on your todo list
-- **Create tasks** - Add new tasks to your list
-- **Update tasks** - Mark tasks as complete, change details
-- **Schedule tasks** - Set when tasks should be done
+<Tip>
+The per-client instructions below do the same thing by hand. Pick one — you don't need both.
+</Tip>
 
-## Supported AI Assistants
+## Your credentials
+
+Both values live in **Preferences** → **MCP Server**:
+
+| Variable | Value |
+|----------|-------|
+| `FOCUH_API_KEY` | Your Focuh API key. Shown once when generated — generating a new key invalidates the old one. |
+| `FOCUH_CONVEX_URL` | Your Convex site URL, in the form `https://<deployment>.convex.site` |
+
+Local clients also need Node.js 18 or newer on your PATH.
+
+## Supported clients
 
 <CardGroup cols={2}>
-  <Card title="Cursor" icon="code">
-    Use Focuh directly in your IDE while coding.
+  <Card title="Claude Code" icon="terminal">
+    One command in your terminal.
   </Card>
   <Card title="Claude Desktop" icon="message">
     Manage tasks from Claude's desktop app.
   </Card>
+  <Card title="Cursor" icon="code">
+    Use Focuh directly in your IDE while coding.
+  </Card>
+  <Card title="Claude.ai & ChatGPT" icon="globe">
+    Connect to the hosted endpoint — no install needed.
+  </Card>
 </CardGroup>
 
-## Setup
+### Claude Code
 
-### Get Your API Key
+Run one command, replacing `<key>` and `<url>` with your credentials:
 
-1. Go to **Settings** in Focuh
-2. Navigate to **API Keys**
-3. Click **Generate API Key**
-4. Copy the key (you won't be able to see it again)
+```bash
+claude mcp add focuh -s user -e FOCUH_API_KEY=<key> -e FOCUH_CONVEX_URL=<url> -- npx -y @focuh/mcp-server
+```
 
-### Configure Your AI Assistant
+`-s user` installs the server for every project on this machine. Drop it to scope it to the current project. Restart Claude Code afterwards.
 
-Add the Focuh MCP server to your assistant's configuration:
+### Claude Desktop
+
+<Steps>
+  <Step title="Open the config file">
+    | Platform | Path |
+    |----------|------|
+    | macOS | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+    | Windows | `%APPDATA%\Claude\claude_desktop_config.json` |
+    | Linux | `~/.config/Claude/claude_desktop_config.json` |
+
+    Create the file if it doesn't exist.
+  </Step>
+  <Step title="Add the Focuh server">
+    ```json
+    {
+      "mcpServers": {
+        "focuh": {
+          "command": "npx",
+          "args": ["-y", "@focuh/mcp-server"],
+          "env": {
+            "FOCUH_API_KEY": "focuh_your_key_here",
+            "FOCUH_CONVEX_URL": "https://your-deployment.convex.site"
+          }
+        }
+      }
+    }
+    ```
+
+    If other servers are already listed, merge the `focuh` entry into the existing `mcpServers` object rather than replacing it.
+  </Step>
+  <Step title="Restart and test">
+    Fully quit and reopen Claude Desktop, then ask "what are my tasks for today?"
+  </Step>
+</Steps>
+
+### Cursor
+
+Focuh generates a one-click install deeplink under **Preferences** → **MCP Server**. It takes the form:
+
+```
+cursor://anysphere.cursor-deeplink/mcp/install?name=focuh&config=<config>
+```
+
+where `<config>` is the URL-encoded base64 of the inner server object only — `{ "command", "args", "env" }`, with no `mcpServers` wrapper.
+
+To do it by hand instead, open `~/.cursor/mcp.json` (create it if needed) and merge in:
 
 ```json
 {
   "mcpServers": {
     "focuh": {
       "command": "npx",
-      "args": ["-y", "focuh-mcp"],
+      "args": ["-y", "@focuh/mcp-server"],
       "env": {
-        "FOCUH_API_KEY": "your-api-key-here"
+        "FOCUH_API_KEY": "focuh_your_key_here",
+        "FOCUH_CONVEX_URL": "https://your-deployment.convex.site"
       }
     }
   }
 }
 ```
 
-## Available Commands
+Reload Cursor, then check **Settings** → **MCP** to confirm `focuh` is connected.
+
+### Claude.ai and ChatGPT
+
+These clients can't run a local process, so they connect to Focuh's hosted Streamable HTTP endpoint instead:
+
+```
+https://www.focuh.com/api/mcp
+```
+
+Both authenticate with OAuth, so there's no API key to paste.
+
+- **Claude.ai** — **Settings** → **Connectors** → **Add custom connector**, paste the URL, then complete the sign-in prompt.
+- **ChatGPT** — **Settings** → **Connectors** → **Advanced** → turn on **Developer mode**, then **Create a new connector** with that URL and OAuth authentication.
+
+<Warning>
+Your API key is the only credential protecting your Focuh data. Don't paste it into shared repos or chat logs. If it leaks, generate a new one in Preferences → MCP Server — that immediately invalidates the old key.
+</Warning>
+
+## Available tools
+
+| Group | Tools |
+|-------|-------|
+| Tasks | `get_tasks`, `create_tasks`, `update_tasks`, `delete_tasks` |
+| Subtasks | `get_subtasks`, `reorder_subtasks` |
+| Loops | `get_loops`, `pull_loops` |
+| Calendar | `get_calendar` |
+| Goals | `get_goals`, `create_goal`, `update_goal`, `delete_goal` |
+| Stats | `get_focus_stats` |
+
+## Things to ask
 
 Once connected, you can ask your AI assistant to:
 
 - "Show me my tasks for today"
-- "Create a task to review the PR"
-- "Mark the database migration task as complete"
-- "Schedule the meeting prep for 2pm"
+- "Create a task to review the PR, 45 minutes, and break it into subtasks"
+- "Move everything I haven't started to tomorrow and mark the report critical"
+- "Schedule the meeting prep for 2pm, around what's already on my calendar"
+- "Pull my pressing loops onto today"
+- "How much focus time did I log this week, and how are my month goals tracking?"
 
 <Tip>
 The MCP integration works best when you give clear, specific instructions about your tasks.
 </Tip>
-
-
-
-
-
-
-
-
-
-
-
