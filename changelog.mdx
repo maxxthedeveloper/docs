@@ -2,6 +2,14 @@
 title: Changelog
 ---
 
+<Update label="August 2026" description="v2.3.0" tags={["New Feature"]}>
+  - **Journal.** One note a day, and nothing to set up — open Journal in the sidebar and start writing. Headings, lists and checkboxes work as you type.
+  - **Your notes are files you own.** Every entry is saved as a plain `.md` file in `~/Documents/Focuh/journal`, so Claude Code, Obsidian, or any other app can read and edit them. Edit a file outside Focuh and the app picks the change up straight away.
+  - **Pick your own folder.** Settings → General lets you point the journal anywhere — an Obsidian vault, a synced folder, a git repo.
+  - **Ask an agent about your journal.** Two new MCP tools, `get_journal` and `write_journal`, let assistants read a day's note or add to it.
+  - **Journal is ⌘5**; Settings moves to ⌘6.
+</Update>
+
 <Update label="August 2026" description="v2.2.0" tags={["Improvement"]}>
   - **One-paste MCP setup.** Preferences → MCP Server now has a **Copy setup prompt** button. Paste the prompt into any coding agent and it installs and verifies the Focuh MCP server for you — credentials already filled in.
   - **Setup for five clients.** Claude Code gets a one-line `claude mcp add` command, Cursor gets a one-click install deeplink, and Claude Desktop keeps the config-file route.
