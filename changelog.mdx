@@ -2,6 +2,15 @@
 title: Changelog
 ---
 
+<Update label="September 2026" description="v2.9.0" tags={["New Feature"]}>
+  - **Daily limits.** Give any site or app a number of minutes per day — 30 minutes on x.com, say. Time counts while it's in front of you, you get a heads-up at 5 and 1 minutes left, and when it's gone the site is blocked until midnight. No override.
+  - **Blocking hours.** Set one schedule — Mon–Fri, 9 to 5 by default — and switch any entry onto it. Those are blocked during those hours whether or not a session is running.
+  - **Rules per entry.** Select an entry in Preferences → Blocking to combine *during focus*, a daily limit and the schedule however you like. Your existing block list keeps working exactly as before.
+  - **Open at login.** Limits only work while Focuh is running, so Focuh can now start with your Mac (Preferences → General → Startup). Closing the window now also hides the Dock icon — Focuh lives in the menu bar until you click it.
+  - **The menu bar shows what's left.** While you're on a limited site or app, the menu bar reads its remaining minutes; a running focus session still takes priority.
+  - **Quitting asks first.** Quitting Focuh lists the limits that would stop being enforced before it exits.
+</Update>
+
 <Update label="September 2026" description="v2.8.0" tags={["New Feature"]}>
   - **Start focus from Raycast.** A Focuh extension for Raycast: **Search Tasks** lists today's plan and starts a session with ↩, **Start Focus** takes a task name (or picks your top task), and **Pause or Resume** / **Stop** work from anywhere. Sign in once with your Focuh account; the Mac app picks the session up on its own — menu bar timer, site and app blocking, the start bell — and comes to the front on Today. Local install for now: `cd raycast && npm install && npm run dev`.
   - **Focus session API.** The API-key endpoints gained `GET /api/mcp/focus` and `POST /api/mcp/focus/{start,stop,pause,resume}`, so any integration with a Focuh key can drive the timer.

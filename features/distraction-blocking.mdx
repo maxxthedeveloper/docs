@@ -1,23 +1,42 @@
 ---
 title: "Distraction Blocking"
-description: "Block distracting websites during focus sessions"
+description: "Block distracting websites and apps — during focus, with a daily limit, or on a schedule"
 ---
 
-The Focuh desktop app blocks websites you find distracting while you're in a focus session.
+The Focuh desktop app for macOS blocks websites and apps you find distracting. Every entry in your block list has three independent rules you can combine:
+
+- **During focus** — blocked while a focus session is running. This is the default for every entry.
+- **Daily limit** — a number of minutes per day, counted while the site or app is in front of you. Once it's used up, the entry is blocked until midnight. There is no override.
+- **Scheduled** — blocked during your blocking hours, focus session or not.
 
 ## How It Works
 
 1. Download the [Focuh desktop app](/download)
-2. Add websites to your block list in Settings → Focus Blocker
-3. Start a focus session
-4. Blocked sites will show a "Stay Focused" overlay instead of the distracting content
+2. Open Preferences → Blocking and add a site or app to your block list
+3. Select an entry to add a daily limit or put it on the schedule
+4. A blocked site shows a calm page telling you why, and a blocked app is closed
+
+## Daily limits
+
+Set a limit in minutes — any number up to a full day. Time only counts while the site or app is the frontmost window, and it pauses when you step away from the Mac — except while audio is playing, so a video you're watching still counts.
+
+You get a notification with 5 minutes left and another with 1 minute left. When the limit is reached, the tab is redirected and any app is closed. Limits reset at midnight, local time.
+
+Usage is counted on this Mac. If you use Focuh on two Macs, each keeps its own count.
+
+## Blocking hours
+
+There is one schedule for everything: pick the days and a start and end time under Preferences → Blocking → Schedule (Mon–Fri, 09:00–17:00 by default). Entries opt in with their own **Scheduled** switch.
+
+## Keeping Focuh running
+
+Limits and the schedule only work while Focuh is open. Closing the window doesn't quit Focuh: it keeps running in the menu bar, without a Dock icon, and clicking the menu bar icon brings the window back. Under Preferences → General → Startup you can turn on **Open at login** so Focuh starts in the background when you log in.
+
+Quitting Focuh shows which limits would stop being enforced before it exits.
 
 ## Managing Your Block List
 
-You can manage your blocked sites from:
-
-- **The Focuh web app** - Go to Settings → Focus Blocker
-- **The desktop app** - Your block list syncs automatically
+Your block list syncs with your account, so it's the same on every Mac you sign in to. Today's usage counters stay on each Mac.
 
 ## Common Sites to Block
 
@@ -31,17 +50,12 @@ Popular productivity killers:
 - `tiktok.com`
 - `news.ycombinator.com`
 
-<Warning>
-Blocking is only active during focus sessions. When you're not focusing, you can browse freely.
-</Warning>
+<Note>
+Entering `x.com` also covers `twitter.com` and `t.co`; `youtube.com` covers `youtu.be` and `m.youtube.com`. Subdomains of an entry are matched too.
+</Note>
 
 ## Desktop App Features
 
-The desktop app supports distraction blocking, but the implementation differs by OS:
-
-- **macOS (native)**: System-wide blocking across Safari, Chrome, Firefox, and more
+- **macOS (native)**: System-wide blocking across Safari, Chrome, Arc, Brave and other browsers, plus app blocking
   - Uses **Accessibility + Automation** (AppleScript) — no admin password, just one-time permissions
-- **Windows (extension)**: Website blocking runs via the **Focuh Blocker browser extension** (Chrome/Edge)
-  - No “Accessibility” permission exists on Windows; the extension enforces redirects during focus sessions
-- **Syncs with web app**: Your block list is the same everywhere
-
+- **Browser extension** (Chrome/Edge): enforces the *during focus* rule only; daily limits and the schedule are desktop-app features
