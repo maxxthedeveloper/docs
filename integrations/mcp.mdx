@@ -1,6 +1,6 @@
 ---
 title: "MCP Server"
-description: "Use Focuh with Claude, Cursor, ChatGPT, and other MCP clients"
+description: "Use Focuh with Claude, Cursor, ChatGPT, Grok, and other MCP clients"
 ---
 
 Focuh provides an MCP (Model Context Protocol) server that lets AI assistants read and change your tasks, subtasks, loops, calendar, goals, and focus stats.
@@ -46,7 +46,7 @@ Local clients also need Node.js 18 or newer on your PATH.
   <Card title="Cursor" icon="code">
     Use Focuh directly in your IDE while coding.
   </Card>
-  <Card title="Claude.ai & ChatGPT" icon="globe">
+  <Card title="Claude.ai, ChatGPT & Grok" icon="globe">
     Connect to the hosted endpoint — no install needed.
   </Card>
 </CardGroup>
@@ -125,7 +125,7 @@ To do it by hand instead, open `~/.cursor/mcp.json` (create it if needed) and me
 
 Reload Cursor, then check **Settings** → **MCP** to confirm `focuh` is connected.
 
-### Claude.ai and ChatGPT
+### Claude.ai, ChatGPT, and Grok
 
 These clients can't run a local process, so they connect to Focuh's hosted Streamable HTTP endpoint instead:
 
@@ -133,10 +133,11 @@ These clients can't run a local process, so they connect to Focuh's hosted Strea
 https://www.focuh.com/api/mcp
 ```
 
-Both authenticate with OAuth, so there's no API key to paste.
+All three authenticate with OAuth, so there's no API key to paste.
 
 - **Claude.ai** — **Settings** → **Connectors** → **Add custom connector**, paste the URL, then complete the sign-in prompt.
 - **ChatGPT** — **Settings** → **Connectors** → **Advanced** → turn on **Developer mode**, then **Create a new connector** with that URL and OAuth authentication.
+- **Grok** — go to [grok.com/connectors](https://grok.com/connectors) → **New Connector** → **Custom**, paste the URL, then complete the sign-in prompt. Custom connectors need a paid Grok plan.
 
 <Warning>
 Your API key is the only credential protecting your Focuh data. Don't paste it into shared repos or chat logs. If it leaks, generate a new one in Preferences → MCP Server — that immediately invalidates the old key.
