@@ -2,6 +2,14 @@
 title: Changelog
 ---
 
+<Update label="September 2026" description="v2.10.0" tags={["Improvement", "Bug Fix"]}>
+  - **Calendar changes stay in sync.** Moving, resizing, or deleting a scheduled task now updates its Google Calendar copy from the server, including changes made through Raycast or an AI assistant.
+  - **Focus days follow your timezone.** Today’s minutes, weekly totals, streaks, and community rankings now agree with the timezone saved by your device.
+  - **Faster, steadier task moves.** Dragging tasks between days, Loops, and priority sections updates immediately and rolls back cleanly if the save fails.
+  - **MCP 3.0.** Focuh’s MCP server now uses short-lived, scoped sessions and supports current Claude, ChatGPT, Cursor, and other MCP clients. Pinned 2.x installs should upgrade to `@focuh/mcp-server@3`.
+  - **A less boring blocked screen.** Blocked sites now occasionally greet you with a focus meme.
+</Update>
+
 <Update label="September 2026" description="v2.9.1" tags={["Bug Fix"]}>
   - **“Always” now means always.** The Mac app now enforces around-the-clock block rules created by the latest interface, even when no focus session is running.
   - **One rule per website.** Pasted URLs such as `x.com/home` are reduced to their domain and merged with duplicates, so an older entry can no longer shadow its limits or schedule.
