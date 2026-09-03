@@ -2,6 +2,11 @@
 title: Changelog
 ---
 
+<Update label="September 2026" description="v2.8.0" tags={["New Feature"]}>
+  - **Start focus from Raycast.** A Focuh extension for Raycast: **Search Tasks** lists today's plan and starts a session with ↩, **Start Focus** takes a task name (or picks your top task), and **Pause or Resume** / **Stop** work from anywhere. Sign in once with your Focuh account; the Mac app picks the session up on its own — menu bar timer, site and app blocking, the start bell — and comes to the front on Today. Local install for now: `cd raycast && npm install && npm run dev`.
+  - **Focus session API.** The API-key endpoints gained `GET /api/mcp/focus` and `POST /api/mcp/focus/{start,stop,pause,resume}`, so any integration with a Focuh key can drive the timer.
+</Update>
+
 <Update label="September 2026" description="v2.7.0" tags={["New Feature"]}>
   - **Goals now have a clock.** "This week" and "This month" show how long is left in the period — "4d left", then "Last day". A goal that outlives its week or month doesn't vanish or tick itself off: it goes into overtime, with "+38d" beside it counting the days, the same way the focus timer counts past its estimate. Finish it, drop it, or pick **Carry over** from its ⋯ menu to bring it into the current week or month. Your week goal also sits in the Week and Today headers with its clock — click it to jump to Goals.
 </Update>
