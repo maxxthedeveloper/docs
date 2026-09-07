@@ -2,6 +2,12 @@
 title: Changelog
 ---
 
+<Update label="September 2026" description="v2.12.0" tags={["Improvement"]}>
+  - **A readable menu bar.** The Mac menu bar now shows up to 20 characters of the task you're working on instead of six.
+  - **Minutes, not seconds.** The menu bar countdown reads `1h 12m` and updates once a minute. Turn Countdown off in Preferences → Menu bar to see `1h 12m left` instead.
+  - **A tidier progress ring.** The ring next to the timer is smaller and a little heavier so it reads at a glance.
+</Update>
+
 <Update label="September 2026" description="v2.11.0" tags={["New Feature", "Bug Fix"]}>
   - **The Mac app no longer hangs without internet.** Opening Focuh offline used to leave it stuck on the loading screen forever. It now explains what's wrong, reconnects on its own, and picks up where you left off.
   - **You can see when you're offline.** A quiet indicator appears in the sidebar when Focuh can't reach the server. Your changes are kept and sync automatically once you're back.
@@ -9,6 +15,7 @@ title: Changelog
   - **Blocking keeps working offline.** Unchanged, but now stated plainly on the offline screen.
   - **Rows stop jumping when you hover a link.** The remove buttons on attached links now slide in over the end of the task title instead of pushing it around and shifting the time chip.
   - **Completed goals can be deleted.** Hover a finished goal and use the trash icon. Undo is available for a few seconds after.
+  - **Resizing a calendar block no longer moves it.** In the Mac app, grabbing the top or bottom edge of a scheduled task or event used to start a drag instead of changing its length. Edge-resizing now works the same as on the web.
   - **Finished goals tidy themselves.** A completed goal stays listed under its section for a week, then leaves the Goals page on its own.
 </Update>
 
