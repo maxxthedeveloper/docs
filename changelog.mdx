@@ -2,6 +2,16 @@
 title: Changelog
 ---
 
+<Update label="September 2026" description="v2.11.0" tags={["New Feature", "Bug Fix"]}>
+  - **The Mac app no longer hangs without internet.** Opening Focuh offline used to leave it stuck on the loading screen forever. It now explains what's wrong, reconnects on its own, and picks up where you left off.
+  - **You can see when you're offline.** A quiet indicator appears in the sidebar when Focuh can't reach the server. Your changes are kept and sync automatically once you're back.
+  - **No more silently lost minutes.** If you stay offline long enough for a running session to be at risk, Focuh now warns you which minutes won't be counted instead of dropping them without a word.
+  - **Blocking keeps working offline.** Unchanged, but now stated plainly on the offline screen.
+  - **Rows stop jumping when you hover a link.** The remove buttons on attached links now slide in over the end of the task title instead of pushing it around and shifting the time chip.
+  - **Completed goals can be deleted.** Hover a finished goal and use the trash icon. Undo is available for a few seconds after.
+  - **Finished goals tidy themselves.** A completed goal stays listed under its section for a week, then leaves the Goals page on its own.
+</Update>
+
 <Update label="September 2026" description="v2.10.0" tags={["Improvement", "Bug Fix"]}>
   - **Calendar changes stay in sync.** Moving, resizing, or deleting a scheduled task now updates its Google Calendar copy from the server, including changes made through Raycast or an AI assistant.
   - **Focus days follow your timezone.** Today’s minutes, weekly totals, streaks, and community rankings now agree with the timezone saved by your device.
