@@ -2,6 +2,12 @@
 title: Changelog
 ---
 
+<Update label="September 2026" description="v0.7.3" tags={["Bug Fix"]}>
+  - **Remove the schedule, keep the task.** Backspace, Delete, and the trash button on a scheduled task now remove only its calendar block and synced Google Calendar event. The task and its subtasks stay in your list.
+  - **Undo sticks around.** ⌘Z restores calendar changes even after the notification disappears. The last ten actions stay available during your signed-in session, and dragging a task back off the calendar can be undone too.
+  - **Undo works from the Mac menu.** The desktop app's Edit → Undo and ⌘Z now reach app actions while keeping normal undo inside text fields and the journal.
+</Update>
+
 <Update label="September 2026" description="v2.17.0" tags={["Bug Fix"]}>
   - **Return confirms a dialog.** In every Focuh dialog, pressing Return now triggers the main button, so a delete confirmation deletes instead of closing. Escape still cancels.
 </Update>
