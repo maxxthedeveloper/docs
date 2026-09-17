@@ -2,6 +2,11 @@
 title: Changelog
 ---
 
+<Update label="September 2026" description="Unreleased" tags={["Improvement", "Bug Fix"]}>
+  - **Two transparency controls.** Appearance adds a separate 0–100 slider for the main panel. The sidebar slider also controls the top bar. Only backgrounds fade; cards and text stay readable, and native macOS blur stays on even at 100.
+  - **Quieter Settings navigation.** Removed the full-window fade and slide that briefly made translucent backgrounds solid. Both sliders now cross Solid without restarting native blur. The next desktop build also keeps the native material in place during theme updates; v0.8.0 retains a safe solid fallback while its theme updates.
+</Update>
+
 <Update label="September 2026" description="Unreleased" tags={["Improvement"]}>
   - **Dial in your sidebar.** Appearance now has a 0–100 transparency slider instead of three presets. Higher values reveal more of the native macOS background blur without fading labels or main content; 100 removes the extra color tint, not the blur. Your choice stays on this Mac, and accessibility settings still temporarily force Solid. Works with Focuh for Mac v0.8.0 or newer.
 </Update>
