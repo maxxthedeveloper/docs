@@ -2,6 +2,11 @@
 title: Changelog
 ---
 
+<Update label="September 2026" description="Unreleased" tags={["Improvement"]}>
+  - **Finished tasks get out of the way.** In Today and Week, completed tasks stay in place for three seconds, then move to the bottom of Nice to have. Reopening a task returns it to its original priority section.
+  - **Nice to have remembers.** Its collapsed or expanded state survives navigation and reloads, including independently for each day in Week. Completing a task won't expand it.
+</Update>
+
 <Update label="September 2026" description="Unreleased" tags={["Improvement", "Bug Fix"]}>
   - **Two transparency controls.** Appearance adds a separate 0–100 slider for the main panel. The sidebar slider also controls the top bar. Only backgrounds fade; cards and text stay readable, and native macOS blur stays on even at 100.
   - **Quieter Settings navigation.** Removed the full-window fade and slide that briefly made translucent backgrounds solid. Both sliders now cross Solid without restarting native blur. The next desktop build also keeps the native material in place during theme updates; v0.8.0 retains a safe solid fallback while its theme updates.
