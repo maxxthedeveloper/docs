@@ -2,6 +2,10 @@
 title: Changelog
 ---
 
+<Update label="September 2026" description="Unreleased" tags={["New Feature"]}>
+  - **Connect a Google account read-only.** Preferences → Calendar has a new Connect read-only option that only asks Google for permission to see your calendars, the smallest request a managed work account can approve. Its events show up like any other, but Focuh never writes to it: tasks can’t be added to it, new events can’t be created on its calendars, and moving, renaming or deleting one of its events is refused with a clear message. A Read-only tag marks it in the list. The same rule now covers accounts that unticked "edit events" on Google’s consent screen.
+</Update>
+
 <Update label="September 2026" description="Unreleased" tags={["Improvement"]}>
   - **Finished tasks get out of the way.** In Today and Week, completed tasks stay in place for three seconds, then move to the bottom of Nice to have. Reopening a task returns it to its original priority section.
   - **Nice to have remembers.** Its collapsed or expanded state survives navigation and reloads, including independently for each day in Week. Completing a task won't expand it.
@@ -14,6 +18,17 @@ title: Changelog
 
 <Update label="September 2026" description="Unreleased" tags={["Improvement"]}>
   - **Dial in your sidebar.** Appearance now has a 0–100 transparency slider instead of three presets. Higher values reveal more of the native macOS background blur without fading labels or main content; 100 removes the extra color tint, not the blur. Your choice stays on this Mac, and accessibility settings still temporarily force Solid. Works with Focuh for Mac v0.8.0 or newer.
+</Update>
+
+<Update label="September 2026" description="v2.20.1" tags={["Bug Fix"]}>
+  - **Resize, don't move.** Dragging the top or bottom edge of a short calendar block now stretches it, instead of picking the whole block up and moving it. This fix mainly affects the Mac app.
+</Update>
+
+<Update label="September 2026" description="v2.20.0" tags={["Improvement"]}>
+  - **Buttons that look like buttons in every color.** Main actions are now a deeper accent fill with white text, so Generate key, Complete, Save and friends read clearly under Sage, Ink, Orchid, your custom color and in dark mode — no more washed-out pill with black text.
+  - **Hover, press and focus feel the same everywhere.** Every button darkens on hover, presses down slightly, and shows a keyboard focus ring in your accent color that sits correctly on dark backgrounds too.
+  - **Delete actions are red.** Buttons that erase something now have their own red style, so a delete confirmation looks like one. Return still confirms it, as before.
+  - Buttons that are working (generating a key, exporting your data) keep their label and show a spinner instead of going grey.
 </Update>
 
 <Update label="September 2026" description="v0.8.0" tags={["New Feature"]}>
