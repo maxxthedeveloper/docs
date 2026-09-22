@@ -4,6 +4,7 @@ title: Changelog
 
 <Update label="September 2026" description="Unreleased" tags={["New Feature"]}>
   - **Connect a Google account read-only.** Preferences → Calendar has a new Connect read-only option that only asks Google for permission to see your calendars, the smallest request a managed work account can approve. Its events show up like any other, but Focuh never writes to it: tasks can’t be added to it, new events can’t be created on its calendars, and moving, renaming or deleting one of its events is refused with a clear message. A Read-only tag marks it in the list. The same rule now covers accounts that unticked "edit events" on Google’s consent screen.
+  - **The Mac app can’t get stuck on a Google page.** Connecting a Google account from the Mac app now opens your browser for the consent step and picks the new account up when you come back. If the app window is ever sent to a page outside Focuh, it returns to where you were and opens that page in your browser instead.
 </Update>
 
 <Update label="September 2026" description="Unreleased" tags={["Improvement"]}>
