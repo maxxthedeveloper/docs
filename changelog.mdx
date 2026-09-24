@@ -2,6 +2,11 @@
 title: Changelog
 ---
 
+<Update label="September 2026" description="Unreleased" tags={["Bug Fix"]}>
+  - **Signing in to the Mac app works again.** Signing in through the browser could fail with "Sign-in session expired or unknown" even on a fresh attempt, and Try Again repeated the error. That is fixed.
+  - **Expired sign-ins say so.** If you leave a browser sign-in open for more than 10 minutes, the Mac app now stops waiting and asks you to try again, and the browser tab tells you to start over from the app instead of offering a Try Again that cannot work.
+</Update>
+
 <Update label="September 2026" description="Unreleased" tags={["New Feature", "Improvement"]}>
   - **Keep working while Focuh runs (Beta).** With Beta features on, closing the full-screen Focuh view no longer ends your session: it shrinks into a small dark bar at the bottom of the window with the timer, your task, and Pause, Complete and End buttons, and follows you everywhere, including Settings. Press F or click the bar to bring the full view back. Focuh remembers which one you last used, so your next session opens straight into the bar or the full view. The full view gains a stop button beside Pause to end the session.
   - **A paused session no longer says "Paused".** The timer dims and the button reads Resume; that is the whole signal, in the full view and in the bar.
