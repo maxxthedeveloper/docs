@@ -4,6 +4,7 @@ title: Changelog
 
 <Update label="September 2026" description="Unreleased" tags={["Bug Fix"]}>
   - **Signing in to the Mac app works again.** Signing in through the browser could fail with "Sign-in session expired or unknown" even on a fresh attempt, and Try Again repeated the error. That is fixed.
+  - **Stay signed in on the Mac.** The app no longer drops you to the sign-in screen when your Mac wakes up offline or a sign-in refresh briefly fails. It waits for the connection, checks again, and only signs you out if you really are.
   - **Expired sign-ins say so.** If you leave a browser sign-in open for more than 10 minutes, the Mac app now stops waiting and asks you to try again, and the browser tab tells you to start over from the app instead of offering a Try Again that cannot work.
 </Update>
 
