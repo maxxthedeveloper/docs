@@ -3,6 +3,7 @@ title: Changelog
 ---
 
 <Update label="October 2026" description="Unreleased" tags={["Bug Fix"]}>
+  - **A pause stays paused.** Pausing a Focuh session no longer picks it back up on its own after 5 minutes. Focuh reminds you once or twice and waits for you to press Resume.
   - **Connection trouble no longer sends you straight to sign-in.** Focuh waits for a verified session result and offers Retry when it cannot reconnect. Account content stays hidden while identity is uncertain. The Mac app also finishes browser sign-in without competing reloads, and token refresh now uses Convex's session-aware Clerk integration.
 </Update>
 
@@ -20,7 +21,6 @@ title: Changelog
 
 <Update label="September 2026" description="Unreleased" tags={["New Feature", "Bug Fix"]}>
   - **Focuh pauses when you step away.** In the Mac app, locking your screen, closing the lid, switching users or leaving your Mac untouched for 10 minutes pauses your Focuh session from the moment you left, so that time isn't counted. Back within 15 minutes? It picks up on its own, and "Count it" adds the time back if you were working away from the screen. After a longer break, choose to resume, count the time, or end the session. Calls and videos don't count as being away.
-  - **A pause stays paused.** Pausing a Focuh session no longer picks it back up on its own after 5 minutes. Focuh reminds you once or twice and waits for you to press Resume.
   - **Signing up from the Mac app finishes.** Creating a new account from the Mac app's "Sign in with browser" now returns you to the app instead of leaving it waiting.
 </Update>
 
