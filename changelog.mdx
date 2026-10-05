@@ -14,6 +14,7 @@ title: Changelog
   - **Colors you can read everywhere.** Every theme now comes from one color engine that checks contrast as it goes. Small labels, section headers, checkbox edges and status text all reach readable contrast in light and dark, and the danger buttons share one red.
   - **Your own accent, all the way through.** A custom color in Settings → Appearance now tints buttons, links, the focus ring and highlights, solved for contrast like the built-in themes. It appears instantly on launch, and the swatches show the exact color you will get.
   - **Leaderboards and Year follow your accent.** These always-dark pages used Sage whatever you picked. They now use your theme.
+  - **Softer shadows in dark mode.** Cards, menus and dialogs cast a lighter shadow on dark backgrounds, so they sit on the page instead of looking cut out of it.
   - **Clearer columns in dark mode.** Week columns and board lanes sit a visible step above the page, and the edge between the sidebar and the rest of the app shows again.
   - **The selected option stands out again.** In dark mode, the chosen option in Light / Dark / System and other switches looked sunken. It sits above its track again.
   - **Scheduled loops stay in their project.** With Projects (Beta) on, dragging a loop onto a day, or moving it from the AI assistant, keeps it in its project's Scheduled list.
@@ -26,7 +27,7 @@ title: Changelog
 </Update>
 
 <Update label="October 2026" description="Unreleased" tags={["Bug Fix"]}>
-  - **Softer time estimates.** Typing `@90m` in a new task now turns it into a rounded gray tag, matching how a picked project looks.
+  - **Tags wherever you type a task.** `@90m`, a picked `#project` and a picked `@goal` show as rounded tags right in the text, in the add-task row, subtasks, and when you rename a task on Today, Week, Board, Loops or a project page. Renaming applies the project or goal when you press Enter, and Esc leaves the task as it was. The goal no longer sits in a separate pill next to the field, and an open row reads "Add task" just like before you clicked it.
   - **Graphite by default.** Focuh now starts with Graphite when you have not chosen a theme. Your saved colors and light/dark preference stay unchanged.
   - **Steady navigation.** Sidebar items no longer shrink when pressed, including Settings and Back to app. Hover, selection and keyboard focus still work as before.
   - **Better-balanced subtask chips.** Today's subtask counter has a little more room beside the number, balancing the chevron against the pill's rounded end.
