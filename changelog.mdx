@@ -3,7 +3,7 @@ title: Changelog
 ---
 
 <Update label="October 2026" description="Unreleased" tags={["New Feature"]}>
-  - **Projects (Beta).** Group tasks into projects. Create one from the new Projects section in the sidebar, or type `#` in any task: the list of projects opens straight away, and typing a name filters it, like `#focuh`. Press Enter on “Create” to make a new one. The tag turns into a coloured chip, and pressing Esc keeps your `#` as plain text.
+  - **Projects (Beta).** Group tasks into projects. Create one from the new Projects section in the sidebar, or type `#` in any task: the list of projects opens straight away, and typing a name filters it, like `#focuh`. Press Enter on “Create” to make a new one. While you type a new task the project shows up right in the text as a coloured tag; press Enter and the task lands in that project. Pressing Esc keeps your `#` as plain text.
   - **Every project has its own backlog.** Each project page sorts its tasks into Pressing, Important, Backlog and Waiting, the same way Loops does, with a Scheduled section below for anything you’ve given a day. Loops is now your first project. Rename it or give it a colour, and everything in it stays put. Rename or delete any other project from the ⋯ on its sidebar row.
   - **One date picker.** The calendar button on a loop opens Today, Tomorrow and Next week, with the day each lands on, above a full calendar. With Beta on, scheduling moves the task onto that day and keeps it in its project, and Back to backlog returns it.
   - **Drag anywhere.** Drag a loop onto any bucket, header included, or into an empty one. Drag a task from Today, Week, Board or a project onto a project in the sidebar to move it there. Dragging now looks the same everywhere.
@@ -25,6 +25,7 @@ title: Changelog
 </Update>
 
 <Update label="October 2026" description="Unreleased" tags={["Bug Fix"]}>
+  - **Softer time estimates.** Typing `@90m` in a new task now turns it into a rounded gray tag, matching how a picked project looks.
   - **Graphite by default.** Focuh now starts with Graphite when you have not chosen a theme. Your saved colors and light/dark preference stay unchanged.
   - **Steady navigation.** Sidebar items no longer shrink when pressed, including Settings and Back to app. Hover, selection and keyboard focus still work as before.
   - **Better-balanced subtask chips.** Today's subtask counter has a little more room beside the number, balancing the chevron against the pill's rounded end.
